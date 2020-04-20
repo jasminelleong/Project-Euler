@@ -45,3 +45,10 @@ def all_prime_numbers():
         if is_prime(i):
             yield i
         i += 1
+
+
+def calculate_factors(number):
+    factors = []
+    for i in range(1, number + 2):
+        if number % i == 0:
+            factors.append(i)
