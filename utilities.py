@@ -4,7 +4,7 @@ def fibonacci_sequence():
     yield second_previous_value
     yield previous_value
     while True:
-        second_previous_value = previous_value
         next_value = second_previous_value + previous_value
+        second_previous_value = previous_value
         previous_value = next_value
         yield next_value
