@@ -27,3 +27,13 @@ def is_prime(num):
             return False
 
     return True
+
+
+def is_palindrome(num):
+    str_version = str(num)
+    num_digits_to_check = len(str_version) // 2
+    for i in range(0, num_digits_to_check + 1):
+        if str_version[i] != str_version[(i + 1) * -1]:
+            return False
+
+    return True
