@@ -37,3 +37,11 @@ def is_palindrome(num):
             return False
 
     return True
+
+
+def all_prime_numbers():
+    i = 2
+    while True:
+        if is_prime(i):
+            yield i
+        i += 1
