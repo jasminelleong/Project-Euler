@@ -13,6 +13,16 @@ def fibonacci_sequence():
         yield next_value
 
 
+def triangle_numbers():
+    previous_iteration = 0
+    cumulative_sum = 0
+    while True:
+        next_iteration = previous_iteration + 1
+        cumulative_sum += next_iteration
+        previous_iteration = next_iteration
+        yield cumulative_sum
+
+
 def is_prime(num):
     if num <= 1:
         return False
