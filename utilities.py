@@ -57,9 +57,17 @@ def all_prime_numbers():
         i += 1
 
 
-def calculate_factors(number):
-    factors = []
-    for i in range(1, number + 2):
-        if number % i == 0:
-            factors.append(i)
-    return factors
+def calculate_divisors(num):
+    divisors = [1, num]
+    square_root = int(math.sqrt(num))
+
+    if square_root * square_root == num:
+        # Num is perfect square
+        divisors.append(square_root)
+
+    for i in range(2, square_root):
+        if num % i == 0:
+            divisors.append(i)
+            divisors.append(num // i)
+
+    return divisors
