@@ -65,7 +65,7 @@ def calculate_divisors(num):
         # Num is perfect square
         divisors.append(square_root)
 
-    for i in range(2, square_root):
+    for i in range(2, square_root + 1):
         if num % i == 0:
             divisors.append(i)
             divisors.append(num // i)
