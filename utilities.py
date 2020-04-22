@@ -162,3 +162,7 @@ def get_proper_divisors(number):
     divisors = calculate_divisors(number)
     divisors.remove(number)
     return divisors
+
+
+def solve_quadratic(a, b, n):
+    return math.pow(n, 2) + (a * n) + b
