@@ -1,7 +1,7 @@
 # Project Euler
 
 ### What is Project Euler?
-Project Euler is a website that publishes math / number theory problems that can, and usually must, be solved with the 
+[Project Euler](https://projecteuler.net) is a website that publishes math / number theory problems that can, and usually must, be solved with the 
 help of a computer.
 
 ### What's this for?
