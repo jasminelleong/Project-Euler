@@ -70,7 +70,7 @@ def calculate_divisors(num):
             divisors.append(i)
             divisors.append(num // i)
 
-    return divisors
+    return list(set(divisors))
 
 
 def collatz_step(num):
