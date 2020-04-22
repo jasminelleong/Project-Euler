@@ -156,3 +156,9 @@ def integer_to_words(number):
         return "eighteen"
     if number == 19:
         return "nineteen"
+
+
+def get_proper_divisors(number):
+    divisors = calculate_divisors(number)
+    divisors.remove(number)
+    return divisors
