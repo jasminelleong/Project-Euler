@@ -1,4 +1,5 @@
 import math
+from typing import List
 
 
 def fibonacci_sequence():
@@ -176,3 +177,11 @@ def to_binary_string(num: int) -> str:
         reverse_binary_string += str(num % 2)
         num = num // 2
     return reverse_binary_string[::-1]
+
+
+def generate_rotations(num: int) -> List[int]:
+    rotations = []
+    string_num = str(num)
+    for i in range(len(string_num)):
+        rotations.append(int(string_num[i:] + string_num[:i]))
+    return rotations
