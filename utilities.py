@@ -71,3 +71,9 @@ def calculate_divisors(num):
             divisors.append(num // i)
 
     return divisors
+
+
+def collatz_step(num):
+    if num % 2 == 0:
+        return num // 2
+    return (num * 3) + 1
