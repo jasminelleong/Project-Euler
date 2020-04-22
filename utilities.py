@@ -166,3 +166,13 @@ def get_proper_divisors(number):
 
 def solve_quadratic(a, b, n):
     return math.pow(n, 2) + (a * n) + b
+
+
+def to_binary_string(num: int) -> str:
+    reverse_binary_string = ''
+    if num == 0:
+        return '0'
+    while num > 0:
+        reverse_binary_string += str(num % 2)
+        num = num // 2
+    return reverse_binary_string[::-1]
