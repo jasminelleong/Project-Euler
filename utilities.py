@@ -185,3 +185,11 @@ def generate_rotations(num: int) -> List[int]:
     for i in range(len(string_num)):
         rotations.append(int(string_num[i:] + string_num[:i]))
     return rotations
+
+
+def is_triangle_number(num: int) -> bool:
+    doubled_num = num * 2
+    truncated_square_root = int(math.sqrt(doubled_num))
+    if doubled_num / truncated_square_root == (truncated_square_root + 1):
+        return True
+    return False
