@@ -193,3 +193,14 @@ def is_triangle_number(num: int) -> bool:
     if doubled_num / truncated_square_root == (truncated_square_root + 1):
         return True
     return False
+
+
+def get_letter_score(letter):
+    return ord(letter) - 64
+
+
+def get_word_score(word):
+    cumulative_score = 0
+    for letter in word:
+        cumulative_score += get_letter_score(letter)
+    return cumulative_score
