@@ -61,7 +61,8 @@ def all_prime_numbers():
 def all_triangle_numbers():
     i = 1
     while True:
-        yield int((i * (i + 1)) / 2)
+        yield nth_triangle_number(i)
+        i += 1
 
 
 def calculate_divisors(num):
