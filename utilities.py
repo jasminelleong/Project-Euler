@@ -195,6 +195,20 @@ def is_triangle_number(num: int) -> bool:
     return False
 
 
+def is_pentagonal(num: int) -> bool:
+    # O(1)
+    # Inverse pentagonal number function
+    pentagonal_index = (1 + math.sqrt(1 + 24 * num)) / 6
+    return pentagonal_index.is_integer()
+
+
+def is_hexagonal(num: int) -> bool:
+    # O(1)
+    # Inverse hexagonal formula
+    hexagonal_index = (1 + math.sqrt(1 + 8 * num))
+    return hexagonal_index.is_integer()
+
+
 def get_letter_score(letter):
     return ord(letter) - 64
 
