@@ -194,6 +194,10 @@ def generate_rotations(num: int) -> List[int]:
     return rotations
 
 
+def nth_triangle_number(n: int) -> int:
+    return int(n * (n + 1) / 2)
+
+
 def is_triangle_number(num: int) -> bool:
     doubled_num = num * 2
     truncated_square_root = int(math.sqrt(doubled_num))
