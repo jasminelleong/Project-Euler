@@ -84,7 +84,7 @@ def all_primes_up_to(n: int) -> List[int]:
     primes = [candidates[i] for i in range(len(candidates)) if primes_mask[i]]
     time_finished = datetime.now()
     elapsed = (time_finished - time_started).total_seconds()
-    print('Finished in {}s'.format(elapsed))
+    print('Prime sieve took {}s'.format(elapsed))
     return primes
 
 
