@@ -58,6 +58,12 @@ def all_prime_numbers():
         i += 1
 
 
+def all_triangle_numbers():
+    i = 1
+    while True:
+        yield int((i * (i + 1)) / 2)
+
+
 def calculate_divisors(num):
     divisors = [1, num]
     square_root = int(math.sqrt(num))
