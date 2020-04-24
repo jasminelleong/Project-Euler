@@ -264,8 +264,13 @@ def is_hexagonal(num: int) -> bool:
 
 
 def is_permutation(candidate: int or str, original: int or str) -> bool:
-    permutations = set(map(''.join, itertools.permutations(str(original))))
+    permutations = all_string_permutations(original)
     return str(candidate) in permutations
+
+
+def all_string_permutations(value: int or str):
+    permutations = set(map(''.join, itertools.permutations(str(value))))
+    return permutations
 
 
 def get_letter_score(letter):
