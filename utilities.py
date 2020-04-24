@@ -1,3 +1,4 @@
+import itertools
 import math
 from typing import List
 
@@ -218,6 +219,11 @@ def is_hexagonal(num: int) -> bool:
     # Inverse hexagonal formula
     hexagonal_index = (1 + math.sqrt(1 + 8 * num)) / 4
     return hexagonal_index.is_integer()
+
+
+def is_permutation(candidate: int or str, original: int or str) -> bool:
+    permutations = set(map(''.join, itertools.permutations(str(original))))
+    return str(candidate) in permutations
 
 
 def get_letter_score(letter):
