@@ -292,17 +292,6 @@ def is_hexagonal(num: int) -> bool:
     return hexagonal_index.is_integer()
 
 
-def is_pandigital(num: int) -> bool:
-    seen_digits = set()
-    string_num = str(num)
-    for digit in string_num:
-        if digit not in seen_digits:
-            seen_digits.add(digit)
-        else:
-            return False
-    return True
-
-
 def is_permutation(candidate: int or str, original: int or str) -> bool:
     permutations = all_string_permutations(original)
     return str(candidate) in permutations
