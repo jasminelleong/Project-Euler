@@ -293,8 +293,9 @@ def is_hexagonal(num: int) -> bool:
 
 
 def is_permutation(candidate: int or str, original: int or str) -> bool:
-    permutations = all_string_permutations(original)
-    return str(candidate) in permutations
+    sorted_str_candidate = sorted(str(candidate))
+    sorted_str_original = sorted(str(original))
+    return sorted_str_candidate == sorted_str_original
 
 
 def all_string_permutations(value: int or str):
