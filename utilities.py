@@ -173,6 +173,44 @@ def get_proper_divisors(number):
     return divisors
 
 
+def prime_factorization(number):
+    # ~ O(sqrt(n))
+    if number == 1:
+        return [1]
+    if number == 3:
+        return [3]
+    factors = []
+    prime_generator = all_prime_numbers()
+    primes = []
+    while len(primes) == 0 or primes[-1] <= int(math.sqrt(number)) + 1:
+        primes.append(next(prime_generator))
+
+    for prime in primes:
+        number_copy = number
+        while number_copy % prime == 0:
+            factors.append(prime)
+            number_copy = number_copy / prime
+            if not number_copy.is_integer():
+                break
+
+    product = 1
+    for factor in factors:
+        product *= factor
+
+    if product != number:
+        dividend = number / product
+        if dividend.is_integer() and is_prime(int(dividend)):
+            factors.append(int(dividend))
+
+    final_product = 1
+    for factor in factors:
+        final_product *= factor
+
+    assert final_product == number
+
+    return factors
+
+
 def solve_quadratic(a, b, n):
     return math.pow(n, 2) + (a * n) + b
 
