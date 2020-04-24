@@ -216,7 +216,7 @@ def is_pentagonal(num: int) -> bool:
 def is_hexagonal(num: int) -> bool:
     # O(1)
     # Inverse hexagonal formula
-    hexagonal_index = (1 + math.sqrt(1 + 8 * num))
+    hexagonal_index = (1 + math.sqrt(1 + 8 * num)) / 4
     return hexagonal_index.is_integer()
 
 
