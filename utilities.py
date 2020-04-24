@@ -1,5 +1,6 @@
 import itertools
 import math
+from datetime import datetime
 from typing import List
 
 
@@ -57,6 +58,34 @@ def all_prime_numbers():
         if is_prime(i):
             yield i
         i += 1
+
+
+def all_primes_up_to(n: int) -> List[int]:
+    # Sieve of Eratosthenes
+    # Roughly O(n) implementation
+    candidates = [i for i in range(n + 1)]
+    primes_mask = [True] * len(candidates)
+    time_started = datetime.now()
+    square_root = round(math.sqrt(n))
+    if n < 2:
+        return []
+
+    for i in range(square_root):
+        if i < 2:
+            primes_mask[i] = False
+        if not primes_mask[i]:
+            continue
+        for j in range(i + candidates[i], len(candidates), candidates[i]):
+            if not primes_mask[j]:
+                continue
+
+            primes_mask[j] = False
+
+    primes = [candidates[i] for i in range(len(candidates)) if primes_mask[i]]
+    time_finished = datetime.now()
+    elapsed = (time_finished - time_started).total_seconds()
+    print('Finished in {}s'.format(elapsed))
+    return primes
 
 
 def all_triangle_numbers():
