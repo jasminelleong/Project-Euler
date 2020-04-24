@@ -303,6 +303,15 @@ def all_string_permutations(value: int or str):
     return permutations
 
 
+def is_one_through_n_pandigital(num: int) -> bool:
+    num_string = str(num)
+    if len(num_string) > 9:
+        return False
+
+    permuted_pandigital = ''.join([str(i + 1) for i in range(len(num_string))])
+    return is_permutation(num_string, permuted_pandigital)
+
+
 def get_letter_score(letter):
     return ord(letter) - 64
 

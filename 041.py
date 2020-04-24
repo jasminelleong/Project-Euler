@@ -3,17 +3,7 @@
 #
 # What is the largest n-digit pandigital prime that exists?
 
-from utilities import is_prime, all_string_permutations, is_permutation
-
-
-def is_pandigital(num: int) -> bool:
-    num_string = str(num)
-    if len(num_string) > 9:
-        return False
-
-    permuted_pandigital = ''.join([str(i + 1) for i in range(len(num_string))])
-    return is_permutation(num_string, permuted_pandigital)
-
+from utilities import is_prime, all_string_permutations
 
 pandigital_string = '987654321'
 
