@@ -237,6 +237,10 @@ def nth_triangle_number(n: int) -> int:
     return int(n * (n + 1) / 2)
 
 
+def nth_pentagonal_number(n: int) -> int:
+    return int(n * (3 * n - 1) / 2)
+
+
 def is_triangle_number(num: int) -> bool:
     doubled_num = num * 2
     truncated_square_root = int(math.sqrt(doubled_num))
