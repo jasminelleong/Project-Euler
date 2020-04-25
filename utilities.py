@@ -65,7 +65,6 @@ def all_primes_up_to(n: int) -> List[int]:
     # Roughly O(n) implementation
     candidates = [i for i in range(n + 1)]
     primes_mask = [True] * len(candidates)
-    time_started = datetime.now()
     square_root = round(math.sqrt(n))
     if n < 2:
         return []
@@ -82,9 +81,6 @@ def all_primes_up_to(n: int) -> List[int]:
             primes_mask[j] = False
 
     primes = [candidates[i] for i in range(len(candidates)) if primes_mask[i]]
-    time_finished = datetime.now()
-    elapsed = (time_finished - time_started).total_seconds()
-    print('Prime sieve took {}s'.format(elapsed))
     return primes
 
 
