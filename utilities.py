@@ -1,7 +1,7 @@
 import itertools
 import math
 from datetime import datetime
-from typing import List
+from typing import List, Dict
 
 
 def fibonacci_sequence():
@@ -234,6 +234,22 @@ def prime_factorization(number):
     assert final_product == number
 
     return factors
+
+
+def prime_factorization_with_powers(num: int) -> Dict[int, int]:
+    factorization = prime_factorization(num)
+    factorization_with_powers = dict()
+    for i in range(len(factorization)):
+        for j in range(i + 1, len(factorization) + 1):
+            if factorization[i] in factorization_with_powers.keys():
+                break
+            try:
+                if factorization[j] != factorization[i]:
+                    factorization_with_powers[factorization[i]] = j - i
+            except IndexError:
+                factorization_with_powers[factorization[i]] = j - i
+
+    return factorization_with_powers
 
 
 def solve_quadratic(a, b, n):
