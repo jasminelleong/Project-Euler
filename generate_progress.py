@@ -8,14 +8,14 @@ solutions_files = [file for file in expected_files if os.path.isfile(file)]
 def write_progress_table(progress_info):
     readme = open('README.md', 'r')
     readme_lines = readme.read()
-    readme_progress_index = readme_lines.find('### Progress')
-    truncated_readme = readme_lines[:readme_progress_index] + '### Progress\n'
+    readme_progress_index = readme_lines.find('## Progress')
+    truncated_readme = readme_lines[:readme_progress_index] + '## Progress\n'
     num_suboptimal = 0
     for line in progress_info:
         if line['time'] > 30:
             num_suboptimal += 1
 
-    progress_line = '{} / {} Complete!\n\n'.format(len(progress_info), 100) + \
+    progress_line = '### {} / {} Complete!\n\n'.format(len(progress_info), 100) + \
                     '{} suboptimal solutions\n\n'.format(num_suboptimal)
     truncated_readme += progress_line
 
