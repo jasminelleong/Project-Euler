@@ -337,3 +337,8 @@ def get_word_score(word):
 
 def n_choose_r(n: int, r: int) -> int:
     return int(math.factorial(n) / (math.factorial(r) * math.factorial(n - r)))
+
+
+def digit_sum(num: int) -> int:
+    str_num = str(num)
+    return sum([int(char) for char in str_num])
