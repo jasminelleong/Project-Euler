@@ -333,3 +333,7 @@ def get_word_score(word):
     for letter in word:
         cumulative_score += get_letter_score(letter)
     return cumulative_score
+
+
+def n_choose_r(n: int, r: int) -> int:
+    return int(math.factorial(n) / (math.factorial(r) * math.factorial(n - r)))
