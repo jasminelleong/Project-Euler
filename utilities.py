@@ -383,6 +383,9 @@ def fraction_inverse(frac: (int, int)) -> (int, int):
 
 
 def greatest_common_divisor(a: int, b: int) -> int:
-    if b == 0:
-        return a
-    return greatest_common_divisor(b, a % b)
+    while b != 0:
+        t = b
+        b = a % b
+        a = t
+
+    return a
