@@ -357,3 +357,26 @@ def reduce_fraction_to_simplest_terms(frac: (int, int)) -> (int, int):
             reduced_denominator /= cancelled_factor
 
     return int(reduced_numerator), int(reduced_denominator)
+
+
+def add_fractions(a: (int, int), b: (int, int)) -> (int, int):
+    if a[1] != b[1]:
+        common_denominator = a[1] * b[1]
+        a = (a[0] * (common_denominator // a[1]), common_denominator)
+        b = (b[0] * (common_denominator // b[1]), common_denominator)
+    else:
+        common_denominator = a[1]
+
+    return reduce_fraction_to_simplest_terms((a[0] + b[0], common_denominator))
+
+
+def multiply_fractions(a: (int, int), b: (int, int)) -> (int, int):
+    return reduce_fraction_to_simplest_terms((a[0] * b[0], a[1] * b[1]))
+
+
+def divide_fractions(a: (int, int), b: (int, int)) -> (int, int):
+    return multiply_fractions((fraction_inverse(a)), b)
+
+
+def fraction_inverse(frac: (int, int)) -> (int, int):
+    return frac[1], frac[0]
