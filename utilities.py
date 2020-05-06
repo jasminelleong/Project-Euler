@@ -367,7 +367,7 @@ def add_fractions(a: (int, int), b: (int, int)) -> (int, int):
     else:
         common_denominator = a[1]
 
-    return reduce_fraction_to_simplest_terms((a[0] + b[0], common_denominator))
+    return a[0] + b[0], common_denominator
 
 
 def multiply_fractions(a: (int, int), b: (int, int)) -> (int, int):
@@ -380,3 +380,9 @@ def divide_fractions(a: (int, int), b: (int, int)) -> (int, int):
 
 def fraction_inverse(frac: (int, int)) -> (int, int):
     return frac[1], frac[0]
+
+
+def greatest_common_divisor(a: int, b: int) -> int:
+    if b == 0:
+        return a
+    return greatest_common_divisor(b, a % b)
