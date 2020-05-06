@@ -351,7 +351,6 @@ def reduce_fraction_to_simplest_terms(frac: (int, int)) -> (int, int):
     reduced_denominator = frac[1]
     for factor, power in numer_factors.items():
         if factor in denom_factors:
-            print(factor)
             cancelled_power = min(power, denom_factors[factor])
             cancelled_factor = pow(factor, cancelled_power)
             reduced_numerator /= cancelled_factor
