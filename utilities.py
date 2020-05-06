@@ -342,3 +342,19 @@ def n_choose_r(n: int, r: int) -> int:
 def digit_sum(num: int) -> int:
     str_num = str(num)
     return sum([int(char) for char in str_num])
+
+
+def reduce_fraction_to_simplest_terms(frac: (int, int)) -> (int, int):
+    numer_factors = prime_factorization_with_powers(frac[0])
+    denom_factors = prime_factorization_with_powers(frac[1])
+    reduced_numerator = frac[0]
+    reduced_denominator = frac[1]
+    for factor, power in numer_factors.items():
+        if factor in denom_factors:
+            print(factor)
+            cancelled_power = min(power, denom_factors[factor])
+            cancelled_factor = pow(factor, cancelled_power)
+            reduced_numerator /= cancelled_factor
+            reduced_denominator /= cancelled_factor
+
+    return int(reduced_numerator), int(reduced_denominator)
