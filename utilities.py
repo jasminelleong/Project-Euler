@@ -278,8 +278,24 @@ def nth_triangle_number(n: int) -> int:
     return int(n * (n + 1) / 2)
 
 
+def nth_square_number(n: int) -> int:
+    return n * n
+
+
 def nth_pentagonal_number(n: int) -> int:
     return int(n * (3 * n - 1) / 2)
+
+
+def nth_hexagonal_number(n: int) -> int:
+    return int(n * (2 * n - 1))
+
+
+def nth_heptagonal_number(n: int) -> int:
+    return int(n * (5 * n - 3) / 2)
+
+
+def nth_octagonal_number(n: int) -> int:
+    return int(n * (3 * n - 2))
 
 
 def is_triangle_number(num: int) -> bool:
