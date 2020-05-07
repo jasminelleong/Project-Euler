@@ -21,6 +21,7 @@ from bigfloat import *
 largest_cycle_denominator = 0
 largest_cycle_length = 0
 
+default_context = getcontext()
 setcontext(precision(10000))
 for i in range(1, 1000):
     big_decimal = str(1 / BigFloat(i))
@@ -39,3 +40,5 @@ for i in range(1, 1000):
         largest_cycle_denominator = i
 
 print('Largest cycle was in 1/{}, {} digits.'.format(largest_cycle_denominator, largest_cycle_length))
+
+setcontext(default_context)
