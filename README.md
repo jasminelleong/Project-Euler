@@ -92,5 +92,6 @@ may in fact still be brute-force solutions. My secondary goal is to gradually op
 | 069.py | 0.40801s |
 | 071.py | 2.21157s |
 | 074.py | **63.812304s** |
+| 076.py | **563.793594s** |
 | 092.py | **108.669548s** |
 | 097.py | 0.050291s |
