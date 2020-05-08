@@ -1,5 +1,6 @@
 import os
 from datetime import datetime
+from subprocess import call
 
 expected_files = [f'{i:03d}.py' for i in range(1000)]
 solutions_files = [file for file in expected_files if os.path.isfile(file)]
@@ -37,10 +38,9 @@ def write_progress_table(progress_info):
 
 execution_info = []
 for solution in solutions_files:
-    file = open(solution, 'r')
     time_started = datetime.now()
     try:
-        return_value = exec(file.read())
+        return_value = call(['python', solution])
     except SystemExit as e:
         pass
     time_finished = datetime.now()
