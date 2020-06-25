@@ -16,7 +16,7 @@
 #
 # Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.
 
-from bigfloat import *
+from bigfloat import getcontext, setcontext, BigFloat, precision
 
 largest_cycle_denominator = 0
 largest_cycle_length = 0

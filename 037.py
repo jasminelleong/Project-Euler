@@ -5,9 +5,8 @@
 # Find the sum of the only eleven primes that are both truncatable from left to right and right to left.
 #
 # NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.
-from typing import List
 
-from utilities import all_primes_up_to, is_prime
+from utilities import all_primes_up_to
 
 primes_under_1m = set(all_primes_up_to(1000000))
 

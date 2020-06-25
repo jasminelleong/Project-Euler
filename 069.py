@@ -16,7 +16,7 @@
 # It can be seen that n=6 produces a maximum n/φ(n) for n ≤ 10.
 #
 # Find the value of n ≤ 1,000,000 for which n/φ(n) is a maximum.
-from utilities import greatest_common_divisor, all_primes_up_to
+from utilities import greatest_common_divisor
 
 max_n_over_phi_n = 0
 answer_n = 0

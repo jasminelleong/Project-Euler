@@ -14,7 +14,7 @@
 # If one complete new layer is wrapped around the spiral above, a square spiral with side length 9 will be formed. If
 # this process is continued, what is the side length of the square spiral for which the ratio of primes along both
 # diagonals first falls below 10%?
-from utilities import all_primes_up_to, is_prime
+from utilities import is_prime
 
 
 def generate_next_spiral_corners(side_length, last_value):
