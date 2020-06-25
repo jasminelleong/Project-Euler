@@ -1,4 +1,5 @@
 # Project Euler
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/KunstDerFuge/Project-Euler.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/KunstDerFuge/Project-Euler/context:python)
 
 ## What is Project Euler?
 [Project Euler](https://projecteuler.net) is a website that publishes math / number theory problems that can, and usually must, be solved with the 
