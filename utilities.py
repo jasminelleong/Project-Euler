@@ -1,6 +1,5 @@
 import itertools
 import math
-from datetime import datetime
 from typing import List, Dict
 
 
@@ -304,6 +303,10 @@ def is_triangle_number(num: int) -> bool:
     if doubled_num / truncated_square_root == (truncated_square_root + 1):
         return True
     return False
+
+
+def is_square(num: int) -> bool:
+    return math.sqrt(num).is_integer()
 
 
 def is_pentagonal(num: int) -> bool:
