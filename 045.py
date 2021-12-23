@@ -6,15 +6,3 @@
 # It can be verified that T(285) = P(165) = H(143) = 40755.
 #
 # Find the next triangle number that is also pentagonal and hexagonal.
-
-from utilities import nth_triangle_number, is_hexagonal, is_pentagonal
-
-triangle_index = 286
-current_triangle_number = nth_triangle_number(triangle_index)
-
-while not (is_pentagonal(current_triangle_number) and is_hexagonal(current_triangle_number)):
-    triangle_index += 1
-    current_triangle_number = nth_triangle_number(triangle_index)
-
-print(triangle_index)
-print(current_triangle_number)

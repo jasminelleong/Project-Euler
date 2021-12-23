@@ -9,11 +9,18 @@
 #
 # Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 
-naturals = [i for i in range(1, 101)]
-squares = [i*i for i in naturals]
+def sum_of_squares(max) :
+    sum = 0
+    for i in range(1, max+1) :
+        sum += i ** 2
+    return sum
 
-naturals_sum = sum(naturals)
-square_of_sum = naturals_sum * naturals_sum
-sum_of_squares = sum(squares)
-difference = square_of_sum - sum_of_squares
-print(difference)
+def square_of_sum(max) :
+    sum = 0
+    for i in range(1, max+1) :
+        sum = sum + i
+    return sum ** 2
+
+sum = sum_of_squares(100)
+square = square_of_sum(100)
+print('difference is', square-sum)

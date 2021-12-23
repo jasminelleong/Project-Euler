@@ -8,35 +8,3 @@
 # What is the total of all the name scores in the file?
 
 
-def get_letter_score(letter):
-    return ord(letter) - 64
-
-
-def get_word_score(word):
-    cumulative_score = 0
-    for letter in word:
-        cumulative_score += get_letter_score(letter)
-    return cumulative_score
-
-
-names_string = ""
-
-with open('022_names.txt') as file:
-    names_string = file.read()
-
-names = names_string.split('"')
-filtered_names = []
-for name in names:
-    if name == '' or name == ',':
-        continue
-    filtered_names.append(name)
-
-filtered_names = sorted(filtered_names)
-cumulative_name_score = 0
-
-for i in range(len(filtered_names)):
-    if filtered_names[i] == 'COLIN':
-        print(i)
-    cumulative_name_score += get_word_score(filtered_names[i]) * (i + 1)
-
-print(cumulative_name_score)

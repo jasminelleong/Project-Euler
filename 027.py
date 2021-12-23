@@ -25,21 +25,3 @@
 # Find the product of the coefficients, a and b, for the quadratic expression that produces the maximum number of
 # primes for consecutive values of n, starting with n=0.
 
-from utilities import is_prime, solve_quadratic
-
-longest_streak = 0
-longest_streak_coefficients = 0, 0
-
-for a in range(-999, 1001):
-    for b in range(-999, 1001):
-        n = 0
-        while is_prime(int(solve_quadratic(a, b, n))):
-            n += 1
-
-        if n > longest_streak:
-            longest_streak = n
-            longest_streak_coefficients = a, b
-
-print(longest_streak)
-print(longest_streak_coefficients)
-print(longest_streak_coefficients[0] * longest_streak_coefficients[1])

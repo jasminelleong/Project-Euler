@@ -6,10 +6,3 @@
 #
 # What is the millionth lexicographic permutation of the digits 0, 1, 2, 3, 4, 5, 6, 7, 8 and 9?
 
-from itertools import permutations
-
-string = '0123456789'
-# Thank you Python
-all_permutations = sorted(permutations(string))
-one_millionth_permutation = all_permutations[999999]
-print(one_millionth_permutation)

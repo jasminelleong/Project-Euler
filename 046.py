@@ -11,18 +11,3 @@
 # It turns out that the conjecture was false.
 #
 # What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?
-from utilities import all_primes_up_to
-
-primes_under_100k = all_primes_up_to(100000)
-double_squares = [i * i * 2 for i in range(1000)]
-prime_and_twice_squares = set()
-
-for prime in primes_under_100k:
-    for double_square in double_squares:
-        prime_and_twice_squares.add(double_square + prime)
-
-for i in range(3, len(prime_and_twice_squares), 2):
-    if i not in prime_and_twice_squares:
-        print(i)
-        exit(0)
-

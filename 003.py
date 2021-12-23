@@ -4,17 +4,31 @@
 
 import math
 
-from utilities import is_prime
+def isPrime(n) :
+    foundFactor = False
+    if n % 2 == 0 :
+        return False
+    for i in range(1, int(math.sqrt((n)+1))) :
+        if n % i == 0:
+            if i != 1 :
+                foundFactor = True
 
-big_number = 600851475143
-largest_possible_factor = int(math.sqrt(big_number))
+    #print(factors)
+    if foundFactor == False:
+        return True
+    else :
+        return False
 
-# Iterate backwards from the square root of the big number
-i = largest_possible_factor
-while i > 1:
-    if is_prime(i) and big_number % i == 0:
-        # This is the largest prime factor
-        print(i)
-        exit(0)
 
-    i -= 1
+def largestPrimeFactor(n) :
+    #factors = []
+    for i in reversed(range(1, int(math.sqrt(n)))) :
+        if i % 2 != 0 :
+            if n % i == 0 :
+                if isPrime(i) :
+                    return i
+    
+    return 1
+
+print (largestPrimeFactor(600851475143))
+#print (isPrime(35))

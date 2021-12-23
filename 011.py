@@ -26,6 +26,7 @@
 # What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally)
 # in the 20×20 grid?
 
+#arr = [08, 02, 22, 97, 38, 15, 00, 40, 00, 75, 04, 05, 07, 78, 52, 12, 50, 77, 91, 08]
 grid = [
     "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08",
     "49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00",
@@ -49,51 +50,58 @@ grid = [
     "01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48"
 ]
 
+gridArr = []
+for i in range(20) :
+    gridArr.append((grid[i].split(' ')))
+#print(arrofarr)
 
-def product_of_array(array):
-    product = 1
-    for num in array:
-        product *= num
-    return product
-
-
-def calculate_largest_product_in_subgrid(_subgrid):
-    products = []
-    if len(_subgrid[0]) == 4:
-        # Horizontal product
-        products.append(product_of_array([_subgrid[0][0], _subgrid[0][1], _subgrid[0][2], _subgrid[0][3]]))
-    if len(_subgrid) == 4:
-        # Vertical product
-        products.append(product_of_array([_subgrid[0][0], _subgrid[1][0], _subgrid[2][0], _subgrid[3][0]]))
-    if len(_subgrid) == 4 and len(_subgrid[0]) == 4:
-        # Upper left to lower right diagonal product
-        products.append(product_of_array([_subgrid[0][0], _subgrid[1][1], _subgrid[2][2], _subgrid[3][3]]))
-        # Upper right to lower left diagonal product
-        products.append(product_of_array([_subgrid[0][3], _subgrid[1][2], _subgrid[2][1], _subgrid[3][0]]))
-    if products:
-        return max(products)
-    return 0
+#Make into array of array of ints
+for i in range(len(gridArr)):
+    gridArr[i] = [int(x) for x in gridArr[i]]
+    #print(gridArr[i])
 
 
-# Process grid data into grid of integers
-for i in range(len(grid)):
-    grid[i] = grid[i].split(' ')
-    for j in range(len(grid[i])):
-        grid[i][j] = int(grid[i][j])
+def horizontalProduct(grid) :
+    ### Find the biggest product among horizontal ###
+    bigproduct = 1
+    for i in range(len(grid)) :
+        for k in range(17) :
+            product = grid[i][k] * grid[i][k+1] * grid[i][k+2] * grid[i][k+3]
+            if product > bigproduct:
+                print(grid[i][k], 'is the grid point', product, 'is the product')
+                bigproduct = product
+    return bigproduct
 
-largest_line_product = 0
-num_subgrids = 0
+def verticalProduct(grid) :
+    ### Find biggest prduct in vertical range
+    bigproduct = 1
+    for i in range(20) :
+        # go through each column. first i is first column
+        for k in range(16) :
+            product = grid[k][i] * grid[k+1][i] * grid[k+2][i] * grid[k+3][i]
+            if product > bigproduct :
+                print(grid[k][i], 'is the grid point', product, 'is the product')
+                bigproduct = product
+    return bigproduct
 
-# Find all 4x4 subgrids
-for row in range(0, len(grid)):
-    for col in range(0, len(grid[0])):
-        subgrid = grid[row:row + 4]
-        for i in range(len(subgrid)):
-            subgrid[i] = subgrid[i][col:col + 4]
-        largest_subgrid_product = calculate_largest_product_in_subgrid(subgrid)
-        if largest_subgrid_product > largest_line_product:
-            largest_line_product = largest_subgrid_product
-        num_subgrids += 1
+def diagonalProduct(grid) :
+    bigproduct = 1
+    for i in range(20) :
+        # go through each row check up /right or down/right
+        for k in range(20): 
+            if k < i and i < 17 :
+                product = grid[i][k] * grid[i+1][k+1] * grid[i+2][k+2] * grid[i+3][k+3]
+                if product > bigproduct :
+                    print('grid', i, ',' , k, 'is the grid point', product, 'is the product')
+                    print (grid[i][k], '*', grid[i+1][k+1], '*', grid[i+2][k+2], '*', grid[i+3][k+3])
+                    bigproduct = product
+            if k > 2 and i < 17 :
+                product = grid[i][k] * grid[i+1][k-1] * grid[i+2][k-2] * grid[i+3][k-3]
+                if product > bigproduct :
+                    print('grid', i, ',' , k, 'is the grid point', product, 'is the product')
+                    bigproduct = product
+                    
+    return bigproduct
 
-print(num_subgrids)
-print(largest_line_product)
+#print(diagonalProduct(gridArr))
+print(max(diagonalProduct(gridArr), horizontalProduct(gridArr), verticalProduct(gridArr)), 'is the largest product of them all')

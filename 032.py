@@ -8,18 +8,3 @@
 # pandigital.
 #
 # HINT: Some products can be obtained in more than one way so be sure to only include it once in your sum.
-
-from utilities import all_string_permutations
-
-all_one_through_nine_pandigitals = all_string_permutations('987654321')
-
-unique_products = set()
-
-for pandigital in all_one_through_nine_pandigitals:
-    for i in range(1, 8):
-        for j in range(i + 1, 9):
-            if int(pandigital[:i]) * int(pandigital[i:j]) == int(pandigital[j:]):
-                print('{} * {} == {}'.format(pandigital[:i], pandigital[i:j], pandigital[j:]))
-                unique_products.add(int(pandigital[j:]))
-
-print(sum(unique_products))

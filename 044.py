@@ -7,19 +7,3 @@
 # Find the pair of pentagonal numbers, P(j) and P(k), for which their sum and difference are pentagonal and
 # D = |P(k) − P(j)| is minimised; what is the value of D?
 
-from utilities import is_pentagonal, nth_pentagonal_number
-
-minimal_difference = 0
-
-for i in range(1, 10000):
-    for j in range(i, 10000):
-        first = nth_pentagonal_number(i)
-        second = nth_pentagonal_number(j)
-        if is_pentagonal(first + second) and is_pentagonal(second - first):
-            print(first, second)
-            if minimal_difference == 0:
-                minimal_difference = second - first
-            elif second - first < minimal_difference:
-                minimal_difference = second - first
-
-print("Minimal difference: {}".format(minimal_difference))

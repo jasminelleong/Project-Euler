@@ -14,33 +14,3 @@
 # If one complete new layer is wrapped around the spiral above, a square spiral with side length 9 will be formed. If
 # this process is continued, what is the side length of the square spiral for which the ratio of primes along both
 # diagonals first falls below 10%?
-from utilities import is_prime
-
-
-def generate_next_spiral_corners(side_length, last_value):
-    corner_delta = side_length - 1
-    first_corner = last_value + corner_delta
-    return [first_corner, first_corner + corner_delta, first_corner + corner_delta * 2, first_corner + corner_delta * 3]
-
-
-current_side_length = 1
-spiral_corners = [1]
-diagonal_prime_saturation_pct = 100
-current_corner_prime_amount = 0
-
-iterations = 0
-
-while diagonal_prime_saturation_pct >= 10:
-    current_side_length += 2
-    new_spiral_corners = generate_next_spiral_corners(current_side_length, spiral_corners[-1])
-    spiral_corners += new_spiral_corners
-    new_diagonal_primes = [corner for corner in new_spiral_corners if is_prime(corner)]
-    current_corner_prime_amount += len(new_diagonal_primes)
-    diagonal_prime_saturation_pct = current_corner_prime_amount / len(spiral_corners) * 100
-
-    iterations += 1
-    if iterations % 100 == 0:
-        print('Prime saturation: {}%'.format(diagonal_prime_saturation_pct))
-
-print('Prime saturation: {}%'.format(diagonal_prime_saturation_pct))
-print('Side length: {}'.format(current_side_length))

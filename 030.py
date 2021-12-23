@@ -9,14 +9,3 @@
 # The sum of these numbers is 1634 + 8208 + 9474 = 19316.
 #
 # Find the sum of all the numbers that can be written as the sum of fifth powers of their digits.
-
-special = []
-
-# Don't know how to calculate the upper limit here, but let's optimistically assume it's under 200k
-for i in range(2, 200000):
-    str_num = str(i)
-    digit_sum = sum([pow(int(digit), 5) for digit in str_num])
-    if digit_sum == i:
-        special.append(i)
-
-print(sum(special))

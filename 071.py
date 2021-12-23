@@ -10,20 +10,3 @@
 # By listing the set of reduced proper fractions for d ≤ 1,000,000 in ascending order of size, find the numerator of
 # the fraction immediately to the left of 3/7.
 
-import math
-
-from utilities import reduce_fraction_to_simplest_terms
-
-candidate_fractions = []
-
-for d in range(1, 1000001):
-    below_three_sevenths_d = math.floor(3 / 7 * d) - 1
-    if below_three_sevenths_d <= 0:
-        below_three_sevenths_d = 1
-    three_sevenths_d = math.ceil(3 / 7 * d)
-    for n in range(below_three_sevenths_d, three_sevenths_d):
-        if n / d < 3 / 7:
-            candidate_fractions.append((n, d))
-
-candidate_fractions = sorted(candidate_fractions, key=lambda x: x[0] / x[1])
-print(reduce_fraction_to_simplest_terms(candidate_fractions[-1]))

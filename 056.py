@@ -3,14 +3,3 @@
 #
 # Considering natural numbers of the form, ab, where a, b < 100, what is the maximum digital sum?
 
-from utilities import digit_sum
-
-max_digit_sum = 0
-
-for a in range(100):
-    for b in range(100):
-        candidate = digit_sum(pow(a, b))
-        if candidate > max_digit_sum:
-            max_digit_sum = candidate
-
-print(max_digit_sum)

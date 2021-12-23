@@ -11,21 +11,3 @@
 #
 # How many starting numbers below ten million will arrive at 89?
 
-
-def next_in_chain(num: int) -> int:
-    str_num = str(num)
-    return sum([int(digit) * int(digit) for digit in str_num])
-
-
-num_arriving_at_89 = 0
-
-for i in range(1, 10000000):
-    chain_num = i
-    while chain_num != 1 and chain_num != 89:
-        chain_num = next_in_chain(chain_num)
-
-    if chain_num == 89:
-        num_arriving_at_89 += 1
-
-
-print(num_arriving_at_89)

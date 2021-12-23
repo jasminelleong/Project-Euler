@@ -15,21 +15,3 @@
 # We can see that 28 is the first triangle number to have over five divisors.
 #
 # What is the value of the first triangle number to have over five hundred divisors?
-from datetime import datetime
-
-from utilities import triangle_numbers, calculate_divisors
-
-triangle_numbers_generator = triangle_numbers()
-time_started = datetime.now()
-
-while True:
-    triangle_number = next(triangle_numbers_generator)
-    num_factors = len(calculate_divisors(triangle_number))
-    if num_factors >= 500:
-        time_finished = datetime.now()
-        print(triangle_number)
-        break
-
-total_time = (time_finished - time_started).total_seconds()
-print('Finished in {}s'.format(total_time))
-

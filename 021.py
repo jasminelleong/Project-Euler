@@ -8,27 +8,3 @@
 #
 # Evaluate the sum of all the amicable numbers under 10000.
 
-from utilities import calculate_divisors
-
-
-def get_proper_divisors(number):
-    divisors = calculate_divisors(number)
-    divisors.remove(number)
-    return divisors
-
-
-cumulative_amicable_sum = 0
-numbers_to_test = list(range(3, 10000))
-
-amicables = []
-
-for i in numbers_to_test:
-    divisors = get_proper_divisors(i)
-    amicable_candidate = sum(divisors)
-    if amicable_candidate == i:
-        continue
-    if sum(get_proper_divisors(amicable_candidate)) == i:
-        cumulative_amicable_sum += i
-        amicables.append(i)
-
-print(cumulative_amicable_sum)
