@@ -6,11 +6,3 @@
 # NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains 23 letters and 115 (
 # one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with
 # British usage.
-from utilities import integer_to_words
-
-cumulative_letter_sum = 0
-
-for i in range(1, 1001):
-    cumulative_letter_sum += len(integer_to_words(i).replace(' ', '').replace('-', ''))
-
-print(cumulative_letter_sum)

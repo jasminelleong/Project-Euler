@@ -16,29 +16,3 @@
 #
 # Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.
 
-from bigfloat import getcontext, setcontext, BigFloat, precision
-
-largest_cycle_denominator = 0
-largest_cycle_length = 0
-
-default_context = getcontext()
-setcontext(precision(10000))
-for i in range(1, 1000):
-    big_decimal = str(1 / BigFloat(i))
-    right_substring_limit = 3
-    while big_decimal[2:right_substring_limit] in big_decimal[right_substring_limit:]:
-        right_substring_limit += 1
-        substring = big_decimal[2:right_substring_limit]
-        next_potential_cycle = big_decimal[right_substring_limit: right_substring_limit + len(substring)]
-        if substring == next_potential_cycle:
-            break
-
-    cycle = big_decimal[2:right_substring_limit]
-    print('1/{}: {}'.format(i, cycle))
-    if len(cycle) > largest_cycle_length:
-        largest_cycle_length = len(cycle)
-        largest_cycle_denominator = i
-
-print('Largest cycle was in 1/{}, {} digits.'.format(largest_cycle_denominator, largest_cycle_length))
-
-setcontext(default_context)

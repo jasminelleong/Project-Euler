@@ -12,23 +12,3 @@
 # d8d9d10=289 is divisible by 17
 #
 # Find the sum of all 0 to 9 pandigital numbers with this property.
-from utilities import all_string_permutations
-
-pandigital_strings = all_string_permutations(1234567890)
-pandigital_strings = [string for string in pandigital_strings if int(string) > 1000000000]
-
-interesting_pandigitals = []
-
-for pandigital in pandigital_strings:
-    expected_divisibility_values = [2, 3, 5, 7, 11, 13, 17]
-    candidate_passes = True
-    for i in range(7):
-        if not int(pandigital[i + 1: i + 4]) % expected_divisibility_values[i] == 0:
-            candidate_passes = False
-            break
-
-    if candidate_passes:
-        print('Found interesting pandigital: {}'.format(pandigital))
-        interesting_pandigitals.append(int(pandigital))
-
-print('Interesting pandigital sum: {}'.format(sum(interesting_pandigitals)))

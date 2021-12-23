@@ -6,18 +6,3 @@
 #
 # What 12-digit number do you form by concatenating the three terms in this sequence?
 
-from utilities import is_prime, is_permutation
-
-four_digit_primes = [i for i in range(1000, 10000) if is_prime(i)]
-answer = None
-
-
-for i in range(len(four_digit_primes)):
-    for j in range(i + 1, len(four_digit_primes)):
-        first_prime = four_digit_primes[i]
-        second_prime = four_digit_primes[j]
-        if not is_permutation(second_prime, first_prime):
-            continue
-        third_candidate = second_prime + (second_prime - first_prime)
-        if is_prime(third_candidate) and is_permutation(third_candidate, second_prime):
-            print(first_prime, second_prime, third_candidate)

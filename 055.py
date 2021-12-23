@@ -22,26 +22,3 @@
 #
 # NOTE: Wording was modified slightly on 24 April 2007 to emphasise the theoretical nature of Lychrel numbers.
 
-from utilities import is_palindrome
-
-num_lychrel = 0
-
-
-def reverse_int(num: int) -> int:
-    str_num = str(num)
-    return int(str_num[::-1])
-
-
-for i in range(1, 10000):
-    candidate = i
-    lychrel = True
-    for j in range(50):
-        candidate = candidate + reverse_int(candidate)
-        if is_palindrome(candidate):
-            # This is not a Lychrel number
-            lychrel = False
-            break
-    if lychrel:
-        num_lychrel += 1
-
-print(num_lychrel)

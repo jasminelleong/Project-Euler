@@ -6,21 +6,15 @@
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the
 # even-valued terms.
 
-from utilities import fibonacci_sequence
-
-
-even_fibs = []
-fibonacci_generator = fibonacci_sequence()
-
-
-for fib in fibonacci_generator:
-    if fib > 4000000:
-        fibonacci_generator.close()
-        break
-    if fib % 2 == 0:
-        print(fib)
-        even_fibs.append(fib)
-
-cumulative_even_fib_sum = sum(even_fibs)
-
-print(cumulative_even_fib_sum)
+a = 1
+b = 2
+c = a +b
+sum = 2
+while c <= 4000000 :
+    print(c)
+    if c % 2 ==0 :
+        sum +=c
+    a = b
+    b = c
+    c= a+b
+print (sum)

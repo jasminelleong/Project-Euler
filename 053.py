@@ -19,13 +19,3 @@
 # How many, not necessarily distinct, values of (nr)
 # for 1≤n≤100, are greater than one-million?
 
-from utilities import n_choose_r
-
-n_choose_r_over_one_mil = 0
-
-for n in range(1, 101):
-    for r in range(1, n + 1):
-        if n_choose_r(n, r) > 1000000:
-            n_choose_r_over_one_mil += 1
-
-print(n_choose_r_over_one_mil)

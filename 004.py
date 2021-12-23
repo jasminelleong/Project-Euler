@@ -2,18 +2,19 @@
 # is 9009 = 91 × 99.
 
 # Find the largest palindrome made from the product of two 3-digit numbers.
-from utilities import is_palindrome
+def is_palindrome(num) :   
+    size = len(str(num))
+    strNum = str(num)
+    for i in range(int(size/2)) :
+        if strNum[i] != strNum[size-i-1] :
+            return False
+    return True
 
-products = []
-
-for x in range(100, 1000):
-    for y in range(100, 1000):
-        products.append(x * y)
-
-products.sort()
-products = reversed(products)
-
-for product in products:
-    if is_palindrome(product):
-        print(product)
-        exit(0)
+#range of 3 dig nums : 100-999
+largest = 1
+for i in range (999,99, -1) :
+    for k in range (999, 99,-1) :
+        if is_palindrome(i*k):
+            if i* k > largest :
+                largest = i * k
+print(largest)

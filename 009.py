@@ -6,20 +6,20 @@
 # There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 # Find the product abc.
 
-sum_to_1000_triplets = []
-
-for a in range(1, 1000):
-    for b in range(2, 1000):
-        if b <= a:
-            continue
-        c = 1000 - b - a
-        if c <= b:
-            break
-        sum_to_1000_triplets.append((a, b, c))
-
-for triplet in sum_to_1000_triplets:
-    a, b, c = triplet
-    if a*a + b*b == c*c:
-        print(triplet)
-        product = a * b * c
-        print(product)
+a = 0
+b = 0
+c = 335
+#1000 - c %2 != 0 because if its divisible by 2, then a !< b
+def generateTriplet(num) :
+    a = 0
+    b = 0
+    for i in range(501, 1, -2):
+        rest = num - i
+        if rest % 2 != 0 :
+            for b in range (rest-1, 11, -1) :
+                a = rest - b
+                if i > b and b > a and a + b + i ==1000:
+                    if a**2 + b**2 == i**2 :
+                        print ('a:', a, 'b', b, 'c', i)
+                        print ('a^2 + b^2 = ', a**2+b**2, 'and c^2=', i**2)
+generateTriplet(1000)

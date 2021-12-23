@@ -1,21 +1,19 @@
 # 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
 #
 # What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
-from utilities import prime_factorization_with_powers
 
-divisors = list(range(1, 21))
-common_factors_of_divisors = dict()
+num = 252000
 
-for divisor in divisors:
-    factorization = prime_factorization_with_powers(divisor)
-    for factor in factorization.keys():
-        # Only replace this divisor's factor in the common set if its power is greater
-        if factor not in common_factors_of_divisors or \
-                factor in common_factors_of_divisors and factorization[factor] > common_factors_of_divisors[factor]:
-            common_factors_of_divisors[factor] = factorization[factor]
-
-common_product = 1
-for factor in common_factors_of_divisors.keys():
-    common_product *= pow(factor, common_factors_of_divisors[factor])
-
-print(common_product)
+def smallestEvenlyDivisbleNum (max) :
+    num = 2520
+    while num <= 23279256009 :
+        for i in reversed(range(1, max+1)) :
+            if num % i != 0 :
+             #print ('not this one')
+             
+                 break
+            if i == 1 :
+                print(num, 'is it!')
+                return num
+        num +=20
+print(smallestEvenlyDivisbleNum(20))

@@ -8,26 +8,3 @@
 #
 # Using words.txt (right click and 'Save Link/Target As...'), a 16K text file containing nearly two-thousand common
 # English words, how many are triangle words?
-from utilities import get_word_score, is_triangle_number
-
-words_string = ''
-
-with open('042_words.txt') as file:
-    words_string = file.read()
-
-words = words_string.split('"')
-filtered_words = []
-for word in words:
-    if word == '' or word == ',':
-        continue
-    filtered_words.append(word)
-
-
-triangle_word_count = 0
-
-for word in filtered_words:
-    word_score = get_word_score(word)
-    if is_triangle_number(word_score):
-        triangle_word_count += 1
-
-print(triangle_word_count)

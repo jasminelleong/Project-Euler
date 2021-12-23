@@ -104,22 +104,3 @@ nums_strings = [
     "53503534226472524250874054075591789781264330331690"
 ]
 
-
-def add_string_numbers(strings) -> str:
-    reverse_answer = ""
-    carry = 0
-    for i in range(-1, -51, -1):
-        digit_sum = 0
-        for string in strings:
-            if i == -1:
-                print(i)
-                print("digit is {}".format(string[i]))
-            digit_sum += int(string[i])
-        digit_sum += carry % 10
-        reverse_answer += str(digit_sum % 10)
-        carry = (carry // 10) + (digit_sum // 10)
-    reverse_answer += str(carry)[::-1]
-    return reverse_answer[::-1]
-
-
-print(add_string_numbers(nums_strings)[0:10])
