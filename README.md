@@ -23,7 +23,7 @@ designated these as 'suboptimal solutions'. That's not to say that the quick one
 may in fact still be brute-force solutions. My secondary goal is to gradually optimize all solutions.
 
 ## Progress
-### 68 / 100 Complete!
+### 11 / 100 Complete!
 
 0 suboptimal solutions
 
