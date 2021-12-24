@@ -23,21 +23,22 @@ designated these as 'suboptimal solutions'. That's not to say that the quick one
 may in fact still be brute-force solutions. My secondary goal is to gradually optimize all solutions.
 
 ## Progress
-### 12 / 100 Complete!
+### 13 / 100 Complete!
 
 0 suboptimal solutions
 
 | File   | Running Time |
 | :----- | :----------- |
-| 001.py | 0.030857s |
-| 002.py | 0.034349s |
-| 003.py | 0.12243s |
-| 004.py | 0.035184s |
-| 005.py | 6.528587s |
-| 006.py | 0.027754s |
-| 007.py | 0.214161s |
-| 008.py | 0.032318s |
-| 009.py | 0.036634s |
-| 010.py | 12.78452s |
-| 011.py | 0.032746s |
-| 012.py | 0.038814s |
+| 001.py | 0.048479s |
+| 002.py | 0.04963s |
+| 003.py | 0.156914s |
+| 004.py | 0.052374s |
+| 005.py | 11.240843s |
+| 006.py | 0.042382s |
+| 007.py | 0.354697s |
+| 008.py | 0.057502s |
+| 009.py | 0.059013s |
+| 010.py | 25.212468s |
+| 011.py | 0.071811s |
+| 012.py | 1.929102s |
+| 013.py | 0.043228s |

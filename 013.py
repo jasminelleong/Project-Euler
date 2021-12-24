@@ -104,3 +104,7 @@ nums_strings = [
     "53503534226472524250874054075591789781264330331690"
 ]
 
+intArr = [int(x) for x in nums_strings]
+sum = sum(intArr)
+first10 = int(str(sum)[0:10])
+print(first10)

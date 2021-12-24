@@ -15,3 +15,29 @@
 # We can see that 28 is the first triangle number to have over five divisors.
 #
 # What is the value of the first triangle number to have over five hundred divisors?
+# factors > 500 including 1 & itself
+
+# largest factor is n/2, but if you check n/i & n/i*2 at same time
+# like 28 % 2 != 0, so add 2 to count of divisors. 
+import math
+
+
+def howManyDivisors(num) :
+    if num == 1 :
+        return 1
+    divCount = 2
+    for i in range(2, int(math.sqrt(num)+1)) :
+        if num % i == 0 :
+            divCount += 2
+    return divCount
+
+
+# Find triangular numbers
+num = 0
+for i in range(1, 15000) :
+    num += i
+    if num % 2 == 0 :
+        if (howManyDivisors(num) > 500) :
+            print(num)
+            break
+

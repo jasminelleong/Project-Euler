@@ -23,4 +23,4 @@ def square_of_sum(max) :
 
 sum = sum_of_squares(100)
 square = square_of_sum(100)
-print('difference is', square-sum)
+print(square-sum)
