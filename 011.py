@@ -53,12 +53,8 @@ grid = [
 gridArr = []
 for i in range(20) :
     gridArr.append((grid[i].split(' ')))
-#print(arrofarr)
-
-#Make into array of array of ints
-for i in range(len(gridArr)):
     gridArr[i] = [int(x) for x in gridArr[i]]
-    #print(gridArr[i])
+#print(arrofarr)
 
 
 def horizontalProduct(grid) :
