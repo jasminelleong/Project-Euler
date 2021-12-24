@@ -14,10 +14,9 @@ def generateTriplet(num) :
     b = 0
     for c in range(501, 1, -1):
         rest = num - c
-        if rest % 2 != 0 :
-            for b in range (rest-1, 11, -1) :
-                a = rest - b
-                if c > b and b > a and a + b + c ==1000:
-                    if a**2 + b**2 == c**2 :
-                        return a * b * c
+        for b in range (rest-1, 11, -1) :
+            a = rest - b
+            if c > b and b > a and a + b + c ==1000:
+                if a**2 + b**2 == c**2 :
+                    return a * b * c
 print(generateTriplet(1000))
