@@ -68,7 +68,6 @@ def horizontalProduct(grid) :
         for k in range(17) :
             product = grid[i][k] * grid[i][k+1] * grid[i][k+2] * grid[i][k+3]
             if product > bigproduct:
-                print(grid[i][k], 'is the grid point', product, 'is the product')
                 bigproduct = product
     return bigproduct
 
@@ -77,10 +76,9 @@ def verticalProduct(grid) :
     bigproduct = 1
     for i in range(20) :
         # go through each column. first i is first column
-        for k in range(16) :
+        for k in range(17) :
             product = grid[k][i] * grid[k+1][i] * grid[k+2][i] * grid[k+3][i]
             if product > bigproduct :
-                print(grid[k][i], 'is the grid point', product, 'is the product')
                 bigproduct = product
     return bigproduct
 
@@ -92,13 +90,10 @@ def diagonalProduct(grid) :
             if k < i and i < 17 :
                 product = grid[i][k] * grid[i+1][k+1] * grid[i+2][k+2] * grid[i+3][k+3]
                 if product > bigproduct :
-                    print('grid', i, ',' , k, 'is the grid point', product, 'is the product')
-                    print (grid[i][k], '*', grid[i+1][k+1], '*', grid[i+2][k+2], '*', grid[i+3][k+3])
                     bigproduct = product
             if k > 2 and i < 17 :
                 product = grid[i][k] * grid[i+1][k-1] * grid[i+2][k-2] * grid[i+3][k-3]
                 if product > bigproduct :
-                    print('grid', i, ',' , k, 'is the grid point', product, 'is the product')
                     bigproduct = product
                     
     return bigproduct

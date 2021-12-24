@@ -9,11 +9,9 @@ def smallestEvenlyDivisbleNum (max) :
     while num <= 23279256009 :
         for i in reversed(range(1, max+1)) :
             if num % i != 0 :
-             #print ('not this one')
              
                  break
             if i == 1 :
-                print(num, 'is it!')
                 return num
         num +=20
 print(smallestEvenlyDivisbleNum(20))

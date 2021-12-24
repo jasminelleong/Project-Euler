@@ -28,7 +28,6 @@ bigNum = 73167176531330624919225119674426574742355349194934969835203127745063262
 stringNum = str(bigNum)
 arr = list(stringNum)
 arr = [int(x) for x in arr]
-#print(arr)
 largestProduct = 0
 for i in range(1000-12) :
     product = 1

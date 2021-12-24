@@ -8,18 +8,16 @@
 
 a = 0
 b = 0
-c = 335
 #1000 - c %2 != 0 because if its divisible by 2, then a !< b
 def generateTriplet(num) :
     a = 0
     b = 0
-    for i in range(501, 1, -2):
-        rest = num - i
+    for c in range(501, 1, -1):
+        rest = num - c
         if rest % 2 != 0 :
             for b in range (rest-1, 11, -1) :
                 a = rest - b
-                if i > b and b > a and a + b + i ==1000:
-                    if a**2 + b**2 == i**2 :
-                        print ('a:', a, 'b', b, 'c', i)
-                        print ('a^2 + b^2 = ', a**2+b**2, 'and c^2=', i**2)
-generateTriplet(1000)
+                if c > b and b > a and a + b + c ==1000:
+                    if a**2 + b**2 == c**2 :
+                        return a * b * c
+print(generateTriplet(1000))

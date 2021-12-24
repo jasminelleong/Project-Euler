@@ -11,7 +11,6 @@ b = 2
 c = a +b
 sum = 2
 while c <= 4000000 :
-    print(c)
     if c % 2 ==0 :
         sum +=c
     a = b
