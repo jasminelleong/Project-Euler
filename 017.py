@@ -7,3 +7,10 @@
 # one hundred and fifteen) contains 20 letters. The use of "and" when writing out numbers is in compliance with
 # British usage.
 from num2words import num2words
+count = 0
+for i in range(1, 1001) :
+    word = num2words(i)
+    for i in range(len(word)) :
+        if word[i] != ' ' and word[i] != '-' :
+            count += 1
+print(count)
