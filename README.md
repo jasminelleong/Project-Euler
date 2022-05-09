@@ -1,3 +1,5 @@
+## Forked this repository from KunstDerFuge - erased his progress to add my own. Below is his description, followed my the time efficiency for my solutions so far.
+
 # Project Euler
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/KunstDerFuge/Project-Euler.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/KunstDerFuge/Project-Euler/context:python)
 
